@@ -4,7 +4,7 @@ import axios from 'axios';
 import './App.css'; 
 
 const fetchPosts = async ({ pageParam = 1}) => {
-  const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${pageParam}`);
+  const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${pageParam}&_limit=1`);
   return data; 
 };
 
