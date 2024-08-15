@@ -3,12 +3,14 @@ import {useInfiniteQuery } from 'react-query';
 import axios from 'axios';
 import './App.css'; 
 
+//fetches data from the API and returns it by a pages 
 const fetchPosts = async ({ pageParam = 1}) => {
-  const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${pageParam}&_limit=1`);
+  const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts?_page=${pageParam}`);
   return data; 
 };
 
 const PostsTable = () => {
+  // fetch posts using the infinite query hook
   const {data,
     isLoading,
     isError,
@@ -20,6 +22,7 @@ const PostsTable = () => {
     queryFn: fetchPosts   
   });
 
+  // automatically fetch the next page of posts
   useEffect(() => {
     if (hasNextPage && !isFetchingNextPage) {
       fetchNextPage();
