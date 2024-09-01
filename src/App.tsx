@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
 
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -12,5 +13,5 @@ function App() {
   );
 }
 
-export default App;
+export default App
 

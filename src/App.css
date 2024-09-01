@@ -23,6 +23,10 @@ body {
   color: #333;
 }
 
+.loading-indicator {
+  text-align: center;
+}
+
 .posts-table {
   width: 95%;
   border-collapse: collapse;
@@ -50,10 +54,6 @@ body {
   margin-top: 20px;
   font-weight: bold;
   color: #333;
-}
-
-.loading {
-  color: #2da635;
 }
 
 .error {
